@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "WARNING: If you have not backed up your Firefox profile, *EVERYTHING WILL BE LOST*. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
+read
 echo "Now downloading latest Standalone Firefox build"
 curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-GB"
 echo "Extracting..."
@@ -7,9 +9,9 @@ rm -r ./firefox.tar.bz2
 echo "Moving files to /opt and adding Launcher entry. You will be asked for your sudo pass."
 sleep 3
 sudo mv ./firefox /opt/Firefox
-sudo mv ./firefox.desktop /usr/share/applications/
-chmod +x /usr/share/applications/firefox.desktop
-echo "Installation complete! *You may need to set your default browser and unpin/pin Firefox again*"
+sudo mv ./Firefox.desktop /usr/share/applications/
+chmod +x /usr/share/applications/Firefox.desktop
+echo "Installation complete!"
 echo "Proceeding to remove Snap..."
 sleep 5
 snap remove gtk-common-themes

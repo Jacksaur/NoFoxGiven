@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "NoFoxGiven Snap removal and replacement script for Firefox."
 echo "WARNING: If you have not backed up your Firefox profile, *EVERYTHING WILL BE LOST*. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 echo "Now downloading latest Standalone Firefox build"
@@ -28,6 +29,6 @@ sudo rm -rf /var/cache/snapd/
 sudo rm -rf /var/lib/snapd
 sudo apt-mark hold snapd
 echo "Removal complete! Snap has also been marked to be held back."
-echo "Script complete. Press Enter to exit."
+echo "Script complete. You can now close this terminal."
 read
 exit

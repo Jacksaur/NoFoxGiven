@@ -10,6 +10,7 @@ rm -r ./firefox.tar.bz2
 echo "Moving files to /opt and adding Launcher entry. You will be asked for your sudo pass."
 sleep 3
 sudo mv ./firefox /opt/Firefox
+sudo rsync ./icons /usr/share
 sudo mv ./Firefox.desktop /usr/share/applications/
 chmod +x /usr/share/applications/Firefox.desktop
 echo "Installation complete!"

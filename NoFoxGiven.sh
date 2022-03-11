@@ -12,6 +12,7 @@ sleep 3
 sudo mv ./firefox /opt/Firefox
 sudo rsync -a ./icons /usr/share
 sudo mv ./Firefox.desktop /usr/share/applications/
+sudo rm -r ./icons
 chmod +x /usr/share/applications/Firefox.desktop
 echo "Installation complete!"
 echo "Proceeding to remove Snap..."
@@ -23,6 +24,7 @@ snap remove firefox
 snap remove core20
 snap remove snapd
 sudo apt purge -y snapd
+sudo apt purge -y libsnapd-qt1
 rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
@@ -32,4 +34,3 @@ sudo apt-mark hold snapd
 echo "Removal complete! Snap has also been marked to be held back."
 echo "Script complete. You can now close this terminal."
 read
-exit

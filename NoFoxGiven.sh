@@ -2,6 +2,11 @@
 echo "NoFoxGiven Snap removal and replacement script for Firefox."
 echo "WARNING: If you have not backed up your Firefox profile, *EVERYTHING WILL BE LOST*. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
+if ! command -v curl &> /dev/null
+then
+    echo "curl is not installed on your system. Install it first with sudo apt install curl, then restart this script"
+    read
+fi
 echo "Now downloading latest Standalone Firefox build"
 curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-GB"
 echo "Extracting..."

@@ -1,5 +1,5 @@
 [Desktop Action new-private-window]
-Exec=/opt/Firefox/firefox -private-window
+Exec=GTK_USE_PORTAL=1 /opt/Firefox/firefox -private-window
 Name=Open a New Private Window
 Name[ar]=افتح نافذة جديدة للتصفح الخاص
 Name[ca]=Obre una finestra nova en mode d'incògnit
@@ -21,7 +21,7 @@ Name[uk]=Відкрити нове вікно у потайливому режи
 Name[zh_TW]=開啟新隱私瀏覽視窗
 
 [Desktop Action new-window]
-Exec=/opt/Firefox/firefox -new-window
+Exec=GTK_USE_PORTAL=1 /opt/Firefox/firefox -new-window
 Name=Open a New Window
 Name[ar]=افتح نافذة جديدة
 Name[ast]=Abrir una ventana nueva

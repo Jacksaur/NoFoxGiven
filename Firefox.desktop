@@ -104,7 +104,7 @@ Comment[uk]=Перегляд сторінок Інтернету
 Comment[vi]=Để duyệt các trang web
 Comment[zh_CN]=浏览互联网
 Comment[zh_TW]=瀏覽網際網路
-Exec=/opt/Firefox/firefox %u
+Exec=GTK_USE_PORTAL=1 /opt/Firefox/firefox %u
 GenericName[en_GB]=Web Browser
 GenericName=Web Browser
 GenericName[ar]=متصفح ويب

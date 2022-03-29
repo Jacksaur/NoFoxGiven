@@ -13,15 +13,17 @@ curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest
 echo "Extracting..."
 tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2
-echo "Moving files to /opt and adding Launcher entry. You will be asked for your sudo pass."
+echo "Moving files and adding Launcher entry. You will be asked for your sudo pass."
 sleep 3
-sudo mv ./firefox /opt/Firefox
+mv ./firefox ~/.local/share/Firefox
+ln -s ~/.local/share/Firefox/firefox ~/.local/bin
 sudo rsync -a ./icons /usr/share
 sudo mv ./Firefox.desktop /usr/share/applications/
-sudo rm -r ./icons
+rm -r ./icons
 chmod +x /usr/share/applications/Firefox.desktop
 echo
-echo "Installation complete!"
+echo "Installation complete! Firefox can be located in your home directory, inside .local/share."
+echo "Your desktop may refresh at some point once KDE notices the change in application entries."
 echo "Proceeding to remove Snap..."
 sleep 5
 snap remove gtk-common-themes

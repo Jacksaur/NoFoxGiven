@@ -9,7 +9,7 @@ then
     exit
 fi
 echo "Now downloading latest Standalone Firefox build"
-curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-GB"
+curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
 echo "Extracting..."
 tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2

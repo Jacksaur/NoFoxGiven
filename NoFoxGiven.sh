@@ -26,7 +26,7 @@ echo "#!/bin/bash" > ~/.local/bin/firefox
 echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ~/.local/bin/firefox
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share
-sudo mv ./Firefox.desktop /usr/share/applications/
+sudo mv ./Firefox.desktop ~/.local/share/applications/
 rm -r ./icons
 chmod +x /usr/share/applications/Firefox.desktop
 echo
@@ -47,6 +47,7 @@ sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/cache/snapd/
 sudo rm -rf /var/lib/snapd
+sudo apt remove --purge plasma-discover-backend-snap
 sudo apt-mark hold snapd
 echo
 echo "Removal complete! Snap has also been marked to be held back."

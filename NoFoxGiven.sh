@@ -18,28 +18,31 @@ echo "Extracting..."
 tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2
 echo "Moving files and adding Launcher entry. You will be asked for your sudo pass."
-sleep 3
+sleep 5
 mv ./firefox ~/.local/share/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
+mkdir -p ~/.local/bin/
 touch ~/.local/bin/firefox
 echo "#!/bin/bash" > ~/.local/bin/firefox
 echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ~/.local/bin/firefox
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share
-sudo mv ./Firefox.desktop ~/.local/share/applications/
+mkdir -p ~/.local/share/applications/
+mv ./Firefox.desktop ~/.local/share/applications/
 rm -r ./icons
-chmod +x /usr/share/applications/Firefox.desktop
+chmod +x ~/.local/share/applications/Firefox.desktop
 echo
 echo "Installation complete! Firefox can be located in your home directory, inside .local/share."
 echo "Your desktop may refresh at some point once KDE notices the change in application entries."
 echo "Proceeding to remove Snap..."
-sleep 5
-snap remove gtk-common-themes
-snap remove bare
-snap remove gnome-3-38-2004
-snap remove firefox
-snap remove core20
-snap remove snapd
+sleep 7
+#Snap commands now require Root permissions, or they'll pop up a Polkit window every time.
+sudo snap remove gtk-common-themes
+sudo snap remove bare
+sudo snap remove gnome-3-38-2004
+sudo snap remove firefox
+sudo snap remove core20
+sudo snap remove snapd
 sudo apt purge -y snapd
 sudo apt purge -y libsnapd-qt1
 rm -rf ~/snap

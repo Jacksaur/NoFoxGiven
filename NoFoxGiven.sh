@@ -23,14 +23,11 @@ echo "Moving files and adding Launcher entry. You will be asked for your sudo pa
 sleep 5
 mv ./firefox ~/.local/share/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
-mkdir NoFoxTemp
-touch ./NoFoxTemp/firefox
-echo "#!/bin/bash" > ./NoFoxTemp/firefox
-echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ./NoFoxTemp/firefox
-chmod +x ./NoFoxTemp/firefox
-#Move bin file to location. Still deciding whether to keep it here or place it in ~/.local/bin and add it to the user's PATH.
-sudo mv ./NoFoxTemp/firefox /bin
-rm -r ./NoFoxTemp
+mkdir -p ~/.local/bin
+touch ~/.local/bin/firefox
+echo "#!/bin/bash" > ~/.local/bin/firefox
+echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ~/.local/bin/firefox
+chmod +x ~/.local/bin/firefox
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share
 mkdir -p ~/.local/share/applications/
@@ -40,6 +37,7 @@ chmod +x ~/.local/share/applications/Firefox.desktop
 echo
 echo "Installation complete! Firefox can be located in your home directory, inside .local/share."
 echo "Your desktop may refresh at some point once KDE notices the change in application entries."
+echo "Due to how Kubuntu handles .local, You won't be able to run Firefox through Terminal until you reload your profile by logging out."
 echo "Proceeding to remove Snap..."
 sleep 7
 #Snap commands now require Root permissions, or they'll pop up a Polkit window every time.

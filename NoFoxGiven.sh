@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "NoFoxGiven Snap removal and replacement script for Firefox."
 sleep 2
+echo "Remember that this script is made for single user systems. Other users on this system will have to install their own browser."
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 

@@ -17,7 +17,6 @@ then
         echo 'Install it with sudo apt install curl, then restart this script.'
         exit 0
     fi
-    exit
 fi
 
 echo "Now downloading latest Standalone Firefox build"

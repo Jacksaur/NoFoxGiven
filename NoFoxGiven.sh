@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "NoFoxGiven Snap removal and replacement script for Firefox."
 sleep 2
-echo "Remember that this script is made for single user systems. Other users on this system will have to install their own browser."
+echo "Remember that this script is made for single user systems. Other users on this system will need to run the Install Only script afterwards."
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 
@@ -37,7 +37,8 @@ chmod +x ~/.local/share/applications/Firefox.desktop
 echo
 echo "Installation complete! Firefox can be located in your home directory, inside .local/share."
 echo "Your desktop may refresh at some point once KDE notices the change in application entries."
-echo "Due to how Kubuntu handles .local, You won't be able to run Firefox through Terminal until you reload your profile by logging out."
+echo
+
 echo "Proceeding to remove Snap..."
 sleep 7
 #Snap commands now require Root permissions, or they'll pop up a Polkit window every time.
@@ -58,6 +59,7 @@ sudo apt remove --purge plasma-discover-backend-snap
 sudo apt-mark hold snapd
 echo
 echo "Removal complete! Snap has also been marked to be held back."
+echo "Due to how Kubuntu handles .local, You won't be able to run Firefox through Terminal until you reload your profile by logging out."
 echo "Script complete. You can now close this terminal."
 read
 exit

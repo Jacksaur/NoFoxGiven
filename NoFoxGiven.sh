@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "NoFoxGiven Snap removal and replacement script for Firefox."
+sleep 2
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 
@@ -21,10 +22,12 @@ echo "Moving files and adding Launcher entry. You will be asked for your sudo pa
 sleep 5
 mv ./firefox ~/.local/share/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
-mkdir -p ~/.local/bin/
-touch ~/.local/bin/firefox
-echo "#!/bin/bash" > ~/.local/bin/firefox
-echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ~/.local/bin/firefox
+# mkdir -p ~/.local/bin/
+# Temporarily go back to using regular /bin until decision is made on adding .local/bin to path
+touch /bin/firefox
+echo "#!/bin/bash" > /bin/firefox
+echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> /bin/firefox
+chmod +x /bin/firefox
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share
 mkdir -p ~/.local/share/applications/

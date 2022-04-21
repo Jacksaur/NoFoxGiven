@@ -23,12 +23,14 @@ echo "Moving files and adding Launcher entry. You will be asked for your sudo pa
 sleep 5
 mv ./firefox ~/.local/share/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
-# mkdir -p ~/.local/bin/
-# Temporarily go back to using regular /bin until decision is made on adding .local/bin to path
-touch /bin/firefox
-echo "#!/bin/bash" > /bin/firefox
-echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> /bin/firefox
-chmod +x /bin/firefox
+mkdir NoFoxTemp
+touch ./NoFoxTemp/firefox
+echo "#!/bin/bash" > ./NoFoxTemp/firefox
+echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ./NoFoxTemp/firefox
+chmod +x ./NoFoxTemp/firefox
+#Move bin file to location. Still deciding whether to keep it here or place it in ~/.local/bin and add it to the user's PATH.
+sudo mv ./NoFoxTemp/firefox /bin
+rm -r ./NoFoxTemp
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share
 mkdir -p ~/.local/share/applications/

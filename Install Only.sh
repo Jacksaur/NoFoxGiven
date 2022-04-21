@@ -11,7 +11,8 @@ if ! command -v curl &> /dev/null
 then
     echo "curl is not installed on your system."
     read -rp 'Do you want to install it? [y/N] ' yesno
-    if [[ $yesno == [yY] ]] ; then
+    if [[ $yesno == [yY] ]]
+    then
         sudo apt install -y curl
     else
         echo 'Install it with sudo apt install curl, then restart this script.'

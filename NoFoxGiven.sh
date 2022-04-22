@@ -48,8 +48,7 @@ echo
 
 echo "Proceeding to remove Snap..."
 sleep 7
-#Single command that should iterate through and uninstall all snaps
-sudo snap remove $(snap list | awk '!/^Name|^core/ {print $1}')
+#Uninstalling Snap through Apt causes it to automatically uninstall all snaps first, so Snap remove commands aren't needed
 sudo apt purge -y snapd
 sudo apt purge -y libsnapd-qt1
 rm -rf ~/snap

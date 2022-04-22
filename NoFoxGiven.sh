@@ -41,13 +41,8 @@ echo
 
 echo "Proceeding to remove Snap..."
 sleep 7
-#Snap commands now require Root permissions, or they'll pop up a Polkit window every time.
-sudo snap remove gtk-common-themes
-sudo snap remove bare
-sudo snap remove gnome-3-38-2004
-sudo snap remove firefox
-sudo snap remove core20
-sudo snap remove snapd
+#Single command that should iterate through and uninstall all snaps
+sudo snap remove $(snap list | awk '!/^Name|^core/ {print $1}')
 sudo apt purge -y snapd
 sudo apt purge -y libsnapd-qt1
 rm -rf ~/snap

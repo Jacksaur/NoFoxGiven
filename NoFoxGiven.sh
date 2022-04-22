@@ -13,6 +13,7 @@ then
     if [[ $yesno == [yY] ]]
     then
         sudo apt install -y curl
+        echo
     else
         echo 'Install it with sudo apt install curl, then restart this script.'
         exit 0

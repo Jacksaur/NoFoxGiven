@@ -9,9 +9,15 @@ read
 #Check if Curl is installed, and abort if not.
 if ! command -v curl &> /dev/null
 then
-    echo "curl is not installed on your system. Install it first with sudo apt install curl, then restart this script."
-    read
-    exit
+    echo "curl is not installed on your system."
+    read -rp 'Do you want to install it? [y/N] ' yesno
+    if [[ $yesno == [yY] ]]
+    then
+        sudo apt install -y curl
+    else
+        echo 'Install it with sudo apt install curl, then restart this script.'
+        exit 0
+    fi
 fi
 
 echo "Now downloading latest Standalone Firefox build"

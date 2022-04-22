@@ -5,12 +5,19 @@ echo "Remember that this script is made for single user systems. Other users on 
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 
-#Check if Curl is installed, and abort if not.
+#Check if Curl is installed, offer to install if not.
 if ! command -v curl &> /dev/null
 then
-    echo "curl is not installed on your system. Install it first with sudo apt install curl, then restart this script."
-    read
-    exit
+    echo "curl is not installed on your system."
+    read -rp 'Do you want to install it? [y/N] ' yesno
+    if [[ $yesno == [yY] ]]
+    then
+        sudo apt install -y curl
+        echo
+    else
+        echo 'Install it with sudo apt install curl, then restart this script.'
+        exit 0
+    fi
 fi
 
 echo "Now downloading latest Standalone Firefox build"
@@ -41,13 +48,7 @@ echo
 
 echo "Proceeding to remove Snap..."
 sleep 7
-#Snap commands now require Root permissions, or they'll pop up a Polkit window every time.
-sudo snap remove gtk-common-themes
-sudo snap remove bare
-sudo snap remove gnome-3-38-2004
-sudo snap remove firefox
-sudo snap remove core20
-sudo snap remove snapd
+#Uninstalling Snap through Apt causes it to automatically uninstall all snaps first, so Snap remove commands aren't needed
 sudo apt purge -y snapd
 sudo apt purge -y libsnapd-qt1
 rm -rf ~/snap

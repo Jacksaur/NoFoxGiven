@@ -5,24 +5,9 @@ echo "Remember that this script is made for single user systems. Other users on 
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 
-#Check if Curl is installed, offer to install if not.
-if ! command -v curl &> /dev/null
-then
-    echo "curl is not installed on your system."
-    read -rp 'Do you want to install it? [y/N] ' yesno
-    if [[ $yesno == [yY] ]]
-    then
-        sudo apt install -y curl
-        echo
-    else
-        echo 'Install it with sudo apt install curl, then restart this script.'
-        exit 0
-    fi
-fi
-
 echo "Now downloading latest Standalone Firefox build"
 #Direct download link to latest Firefox version from Mozilla
-curl -L -o firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
+wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
 echo "Extracting..."
 tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2

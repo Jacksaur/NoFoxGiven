@@ -14,4 +14,7 @@ After you've run the script, open your newly installed Standalone Firefox, go to
 # Installation and Usage
 Ensure Curl is installed on your system.  
 Backup your profile as described above. Download the latest release and unzip it all to a folder. Right click on the script, go to properties, permissions, and tick *Is Executable*. Right click the script and choose Run in Konsole (or whichever Terminal Emulator you use). After the script finishes, restore your Profile backup as described above.  
-If your system has multiple user accounts, they will be left without a browser. You'll have to run the "Install Only" script on each account to repeat the Firefox replacement portion of the script for each user.
+
+# Known Issues
+* This script is not designed for multi user systems. If there are multiple user accounts on your system, they will be left without a browser after the script finishes. You can rectify this by running the "Install Firefox Only" script on each account that needs it afterwards.
+* This version of Firefox is not able to set itself as the default Browser, and will warn you about doing so every time it starts. You will need to set it yourself through the KDE settings menu, under Default applications. In about:preferences, you can then disable the Default Browser check to stop it from nagging you every time it starts.

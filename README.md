@@ -12,7 +12,6 @@ You can back up your profile by navigating to *about:profiles*, and finding the 
 After you've run the script, open your newly installed Standalone Firefox, go to *about:profiles* again, open any profile's Root folder, and move up a directory. And paste the profile folder you backed up earlier here. You may need to restart Firefox to get it to appear in the profiles menu, but once it does choose *Set as Default Profile* and restart. Almost everything should now be in the same state as it was with your old version of Firefox, but again, you'll need to reconfigure your individual Addons.
 
 # Installation and Usage
-Ensure Curl is installed on your system.  
 Backup your profile as described above. Download the latest release and unzip it all to a folder. Right click on the script, go to properties, permissions, and tick *Is Executable*. Right click the script and choose Run in Konsole (or whichever Terminal Emulator you use). After the script finishes, restore your Profile backup as described above.  
 
 # Known Issues

@@ -1,6 +1,6 @@
 # NoFoxGiven
 Automated script to remove all traces of Snap, including reinstalling a standalone version of Firefox.  
-This is my first script I'm making publically available. I have zero actual code knowledge and just put it together as I went. I'm certain elements can be done better and I've probably made amaturish mistakes in places. Any suggestions or improvements are welcome.
+This is my first script I'm making publically available, Any suggestions or improvements are welcome.
 
 This script will download the latest [Standalone version of Firefox from Mozilla](https://www.mozilla.org/en-GB/firefox/all/#product-desktop-release), uninstall all Snaps installed by default, then remove Snap itself and mark it to be held back: Preventing any further snaps from being installed in future.
 This script is designed for use with Kubuntu 22.04 and above. It is untested on any other distro.

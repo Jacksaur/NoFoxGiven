@@ -13,7 +13,7 @@ tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2
 echo "Moving files and adding Launcher entry. You will be asked for your sudo pass."
 sleep 5
-mv ./firefox ~/.local/share/Firefox
+mv ./firefox /opt/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
 mkdir -p ~/.local/bin
 touch ~/.local/bin/firefox
@@ -27,7 +27,7 @@ mv ./Firefox.desktop ~/.local/share/applications/
 rm -r ./icons
 chmod +x ~/.local/share/applications/Firefox.desktop
 echo
-echo "Installation complete! Firefox can be located in your home directory, inside .local/share."
+echo "Installation complete! Firefox can be located in the /opt folder."
 echo "Your desktop may refresh at some point once KDE notices the change in application entries."
 echo
 

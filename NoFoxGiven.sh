@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "NoFoxGiven Snap removal and replacement script for Firefox."
 sleep 2
-echo "Remember that this script is made for single user systems. Other users on this system will need to run the Install Only script afterwards."
+echo "This version of the script installs to /opt. The permissions are weird, I very much do not recommend using this version on multi user systems."
 echo "WARNING: If you have not backed up your Firefox profile, **EVERYTHING WILL BE LOST**. Close this command prompt and check the Github page for instructions on how to do so. Otherwise, press Enter to continue."
 read
 
@@ -13,7 +13,8 @@ tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2
 echo "Moving files and adding Launcher entry. You will be asked for your sudo pass."
 sleep 5
-mv ./firefox /opt/Firefox
+sudo mv ./firefox /opt/Firefox
+sudo chown $USER /opt/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
 mkdir -p ~/.local/bin
 touch ~/.local/bin/firefox

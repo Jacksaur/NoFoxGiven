@@ -2,7 +2,7 @@
 echo "NoFoxGiven: Browser Install Only script"
 sleep 2
 echo "This script will install the standalone version of Firefox provided by Mozilla. It will not do anything else."
-echo "This script only affects the current user. You will have to run it again on any other accounts you want to install to."
+echo "This version of the script will install to the /opt folder. It'll have weird permissions and frankly even I'm not sure what will happen on multiple user systems."
 echo "Press Enter to continue."
 read
 
@@ -14,7 +14,8 @@ tar xjf firefox.tar.bz2
 rm -r ./firefox.tar.bz2
 echo "Moving files and adding Launcher entry. You will be asked for your sudo pass."
 sleep 5
-mv ./firefox ~/opt/Firefox
+sudo mv ./firefox /opt/Firefox
+sudo chown $USER /opt/Firefox
 #Create /bin file to allow launching through Terminal, whilst still applying KDE Filepicker tweak
 mkdir -p ~/.local/bin
 touch ~/.local/bin/firefox

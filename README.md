@@ -7,7 +7,7 @@ This script is designed for use with Kubuntu 22.04 and above. It is untested on 
 
 Newly added: An optional set of legacy icons are now included, from before Mozilla's controversial redesign. Rename the "legacy" folder to replace the existing "icons" folder before executing the script to use them.
 <p align="center">
-  <img width="460" src="LegacyPreview.png">
+  <img width="460" src="Preview.png">
 </p>
 
 # Backup your Firefox profile or you will lose everything!

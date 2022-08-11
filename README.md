@@ -23,3 +23,8 @@ Right click on the script, go to properties, permissions, and tick *Is Executabl
 # Known Issues
 * This script is not designed for multi user systems. If there are multiple user accounts on your system, they will be left without a browser after the script finishes. You can rectify this by running the "Install Firefox Only" script on each account that needs it afterwards.
 * This version of Firefox is not able to set itself as the default Browser, and will warn you about doing so every time it starts. You will need to set it yourself through the KDE settings menu, under Default applications. In about:preferences, you can then disable the Default Browser check to stop it from nagging you every time it starts.
+
+# Bonus
+
+There's some really great Breeze Themes for Firefox by Schlagma [here.](https://addons.mozilla.org/en-GB/firefox/user/14474816/) Makes it look like a native KDE app.
+I also made some [accent-coloured variants](https://www.dropbox.com/s/cs8x4iz3j706wcy/Firefox%20Breeze%20Dark%20Accent%20Coloured.zip?dl=0) of it, though only for the Dark version as they weren't really visible on the white of the regular one.

@@ -19,7 +19,7 @@ sudo chown $USER /opt/Firefox
 mkdir -p ~/.local/bin
 touch ~/.local/bin/firefox
 echo "#!/bin/bash" > ~/.local/bin/firefox
-echo "GTK_USE_PORTAL=1 ~/.local/share/Firefox/firefox" >> ~/.local/bin/firefox
+echo "GTK_USE_PORTAL=1 /opt/Firefox/firefox" >> ~/.local/bin/firefox
 chmod +x ~/.local/bin/firefox
 #Copy Icons and .desktop file to their proper places
 sudo rsync -a ./icons /usr/share

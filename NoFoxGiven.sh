@@ -40,13 +40,13 @@ sudo snap remove bare
 sudo snap remove core20
 sudo snap remove snapd
 sudo apt remove --autoremove -y snapd
+sudo apt remove --purge -y plasma-discover-backend-snap
 
 rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/cache/snapd/
 sudo rm -rf /var/lib/snapd
-sudo apt remove --purge plasma-discover-backend-snap
 sudo apt-mark hold snapd
 echo
 echo "Removal complete! Snap has also been marked to be held back."

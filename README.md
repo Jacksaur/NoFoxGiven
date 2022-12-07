@@ -1,3 +1,5 @@
+# -- NOT CURRENTLY SUPPORTED FOR KUBUNTU 22.10. USE IS NOT RECOMMENDED UNTIL SCRIPT IS FIXED --
+
 # NoFoxGiven
 Automated script to remove all traces of Snap, including reinstalling a standalone version of Firefox.  
 This is my first script I'm making publically available, Any suggestions or improvements are welcome.

@@ -3,7 +3,7 @@ Automated script to remove all traces of Snap, including reinstalling a standalo
 This is my first script I'm making publically available, Any suggestions or improvements are welcome.
 
 This script will download the latest [Standalone version of Firefox from Mozilla](https://www.mozilla.org/en-GB/firefox/all/#product-desktop-release), uninstall all Snaps installed by default, then remove Snap itself and mark it to be held back: Preventing any further snaps from being installed in future.
-This script is designed for use with Kubuntu 22.04 and above. It is untested on any other distro.
+This script is designed for use with Kubuntu 22.04 and above. It is untested on any other distro, including KDE Neon, but it should be ok on that, given its Ubuntu base..
 
 Newly added: An optional set of legacy icons are now included, from before Mozilla's controversial redesign. Rename the "legacy" folder to replace the existing "icons" folder before executing the script to use them.
 <p align="center">

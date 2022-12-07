@@ -33,15 +33,20 @@ echo
 
 echo "Proceeding to remove Snap..."
 sleep 7
-#Uninstalling Snap through Apt causes it to automatically uninstall all snaps first, so Snap remove commands aren't needed
-sudo apt purge -y snapd
-sudo apt purge -y libsnapd-qt1
+sudo snap remove firefox
+sudo snap remove gnome-3-38-2004
+sudo snap remove gtk-common-themes
+sudo snap remove bare
+sudo snap remove core20
+sudo snap remove snapd
+sudo apt remove --autoremove -y snapd
+sudo apt remove --purge -y plasma-discover-backend-snap
+
 rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/cache/snapd/
 sudo rm -rf /var/lib/snapd
-sudo apt remove --purge plasma-discover-backend-snap
 sudo apt-mark hold snapd
 echo
 echo "Removal complete! Snap has also been marked to be held back."

@@ -1,3 +1,12 @@
+# Project is archived
+I've long since moved on from Ubuntu, and Linux in general to a degree, due to Nvidia fuckery.
+The script seems to work well enough still, but can have issues in being uninstalled. Use at your own risk.
+
+
+
+
+
+
 # NoFoxGiven
 Automated script to remove all traces of Snap, including reinstalling a standalone version of Firefox.  
 This is my first script I'm making publically available, Any suggestions or improvements are welcome.
